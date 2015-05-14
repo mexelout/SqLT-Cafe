@@ -9,14 +9,100 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
-
+    @IBOutlet weak var openRecentMenu: NSMenu!
+    @IBOutlet weak var executeSqlMenuItem: NSMenuItem!
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        openRecentMenu.delegate = self
+        resetRecentItem()
     }
 
+    // MARK: - menu
+    @IBAction func openDocument(sender: NSMenuItem) {
+        var openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = false
+        openPanel.canCreateDirectories = false
+        openPanel.canChooseFiles = true
+        openPanel.allowsOtherFileTypes = false
+        openPanel.allowedFileTypes = ["sqlite"]
+        openPanel.beginWithCompletionHandler { (result) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+                if let filePath: NSURL = openPanel.URL {
+                    var filePathStr: String = (filePath.path != nil) ? filePath.path! : ""
+                    if NSFileManager.defaultManager().fileExistsAtPath(filePathStr) {
+                        let ud: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+                        if (ud.objectForKey("recentPaths") as? [[String: String]]) == nil  {
+                            ud.setObject([[String:String]](), forKey: "recentPaths")
+                        }
+                        var recentPaths: [[String:String]] = ud.objectForKey("recentPaths") as! [[String:String]]
+                        if recentPaths.filter({ (str) -> Bool in
+                            str["path"] == filePathStr
+                        }).count == 0 {
+                            let filename: String = (filePath.lastPathComponent != nil) ? filePath.lastPathComponent! : ""
+                            recentPaths.append(["filename": filename, "path": filePathStr])
+                        }
+                        ud.setObject(recentPaths, forKey: "recentPaths")
+
+                        self.resetRecentItem()
+
+                        if let vc: ViewController = _viewController {
+                            if let w: NSWindow = vc.view.window {
+                                if w.visible == false {
+                                    w.orderFront(nil)
+                                }
+                            }
+                            self.executeSqlMenuItem.enabled = true
+                            vc.openSqlite(filePath.path!)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    func menuNeedsUpdate(menu: NSMenu) {}
+
+    func openRecentFile(sender: NSMenuItem) {
+        if let recent: [[String: String]] = NSUserDefaults.standardUserDefaults().objectForKey("recentPaths") as? [[String: String]] {
+            let index: Int = openRecentMenu.indexOfItem(sender)
+            if let filePath: String = recent[index]["path"] {
+                if NSFileManager.defaultManager().fileExistsAtPath(filePath) {
+                    if let vc: ViewController = _viewController {
+                        if let w: NSWindow = vc.view.window {
+                            if w.visible == false {
+                                w.orderFront(nil)
+                            }
+                        }
+                        executeSqlMenuItem.enabled = true
+                        vc.openSqlite(filePath)
+                    }
+                }
+            }
+        }
+    }
+
+    @IBAction func clearRecentDocuments(sender: NSMenuItem) {
+        let ud: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        ud.setObject([[String:String]](), forKey: "recentPaths")
+        resetRecentItem()
+    }
+
+    func resetRecentItem() {
+        openRecentMenu.removeAllItems()
+        openRecentMenu.addItemWithTitle("Clear", action: "clearRecentDocuments:", keyEquivalent: "")
+        openRecentMenu.insertItem(NSMenuItem.separatorItem(), atIndex: 0)
+        if let recent: [[String: String]] = NSUserDefaults.standardUserDefaults().objectForKey("recentPaths") as? [[String: String]] {
+            for item in recent {
+                openRecentMenu.insertItemWithTitle(item["filename"]!, action: "openRecentFile:", keyEquivalent: "", atIndex: 0)
+            }
+        }
+    }
+
+    // MARK: - application
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
@@ -156,6 +242,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // If we got here, it is time to quit.
         return .TerminateNow
     }
+
+    // 閉じるボタンでアプリ終了するかどうか(trueでアプリ終了、デフォルトはfalse)
+//    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+//        return true
+//    }
 
 }
 

@@ -13,6 +13,14 @@
 		E34869C81ADFAA080021E668 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34869C71ADFAA080021E668 /* Images.xcassets */; };
 		E34869CB1ADFAA080021E668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34869C91ADFAA080021E668 /* Main.storyboard */; };
 		E34869D71ADFAA080021E668 /* SqLT_CafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34869D61ADFAA080021E668 /* SqLT_CafeTests.swift */; };
+		E36C0F011B017A6F00DCAC77 /* ExecuteSQLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C0F001B017A6F00DCAC77 /* ExecuteSQLViewController.swift */; };
+		E37235921AEDF570002C8FD8 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E37235911AEDF570002C8FD8 /* libsqlite3.0.dylib */; };
+		E37235AE1AEDFEE5002C8FD8 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E37235A41AEDFEE5002C8FD8 /* FMDatabase.m */; };
+		E37235AF1AEDFEE5002C8FD8 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E37235A61AEDFEE5002C8FD8 /* FMDatabaseAdditions.m */; };
+		E37235B01AEDFEE5002C8FD8 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = E37235A81AEDFEE5002C8FD8 /* FMDatabasePool.m */; };
+		E37235B11AEDFEE5002C8FD8 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E37235AA1AEDFEE5002C8FD8 /* FMDatabaseQueue.m */; };
+		E37235B21AEDFEE5002C8FD8 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E37235AD1AEDFEE5002C8FD8 /* FMResultSet.m */; };
+		E3DC274D1AF12C8200BAC325 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC274C1AF12C8200BAC325 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,21 @@
 		E34869D01ADFAA080021E668 /* SqLT-CafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SqLT-CafeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34869D51ADFAA080021E668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E34869D61ADFAA080021E668 /* SqLT_CafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqLT_CafeTests.swift; sourceTree = "<group>"; };
+		E36C0F001B017A6F00DCAC77 /* ExecuteSQLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecuteSQLViewController.swift; sourceTree = "<group>"; };
+		E37235911AEDF570002C8FD8 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		E37235A01AEDFC98002C8FD8 /* SqLT-Cafe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SqLT-Cafe-Bridging-Header.h"; sourceTree = "<group>"; };
+		E37235A31AEDFEE5002C8FD8 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = "SqLT-Cafe/fmdb/FMDatabase.h"; sourceTree = "<group>"; };
+		E37235A41AEDFEE5002C8FD8 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = "SqLT-Cafe/fmdb/FMDatabase.m"; sourceTree = "<group>"; };
+		E37235A51AEDFEE5002C8FD8 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = "SqLT-Cafe/fmdb/FMDatabaseAdditions.h"; sourceTree = "<group>"; };
+		E37235A61AEDFEE5002C8FD8 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = "SqLT-Cafe/fmdb/FMDatabaseAdditions.m"; sourceTree = "<group>"; };
+		E37235A71AEDFEE5002C8FD8 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = "SqLT-Cafe/fmdb/FMDatabasePool.h"; sourceTree = "<group>"; };
+		E37235A81AEDFEE5002C8FD8 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = "SqLT-Cafe/fmdb/FMDatabasePool.m"; sourceTree = "<group>"; };
+		E37235A91AEDFEE5002C8FD8 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = "SqLT-Cafe/fmdb/FMDatabaseQueue.h"; sourceTree = "<group>"; };
+		E37235AA1AEDFEE5002C8FD8 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = "SqLT-Cafe/fmdb/FMDatabaseQueue.m"; sourceTree = "<group>"; };
+		E37235AB1AEDFEE5002C8FD8 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = "SqLT-Cafe/fmdb/FMDB.h"; sourceTree = "<group>"; };
+		E37235AC1AEDFEE5002C8FD8 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = "SqLT-Cafe/fmdb/FMResultSet.h"; sourceTree = "<group>"; };
+		E37235AD1AEDFEE5002C8FD8 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = "SqLT-Cafe/fmdb/FMResultSet.m"; sourceTree = "<group>"; };
+		E3DC274C1AF12C8200BAC325 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37235921AEDF570002C8FD8 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +83,8 @@
 		E34869B21ADFAA080021E668 = {
 			isa = PBXGroup;
 			children = (
+				E3645AF11AF93C33001E6FA9 /* FMDB */,
+				E37235911AEDF570002C8FD8 /* libsqlite3.0.dylib */,
 				E34869BD1ADFAA080021E668 /* SqLT-Cafe */,
 				E34869D31ADFAA080021E668 /* SqLT-CafeTests */,
 				E34869BC1ADFAA080021E668 /* Products */,
@@ -77,12 +103,15 @@
 		E34869BD1ADFAA080021E668 /* SqLT-Cafe */ = {
 			isa = PBXGroup;
 			children = (
+				E37235A01AEDFC98002C8FD8 /* SqLT-Cafe-Bridging-Header.h */,
 				E34869C01ADFAA080021E668 /* AppDelegate.swift */,
 				E34869C21ADFAA080021E668 /* ViewController.swift */,
 				E34869C71ADFAA080021E668 /* Images.xcassets */,
 				E34869C91ADFAA080021E668 /* Main.storyboard */,
 				E34869C41ADFAA080021E668 /* SqLT_Cafe.xcdatamodeld */,
 				E34869BE1ADFAA080021E668 /* Supporting Files */,
+				E3DC274C1AF12C8200BAC325 /* Extension.swift */,
+				E36C0F001B017A6F00DCAC77 /* ExecuteSQLViewController.swift */,
 			);
 			path = "SqLT-Cafe";
 			sourceTree = "<group>";
@@ -110,6 +139,24 @@
 				E34869D51ADFAA080021E668 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3645AF11AF93C33001E6FA9 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				E37235A31AEDFEE5002C8FD8 /* FMDatabase.h */,
+				E37235A41AEDFEE5002C8FD8 /* FMDatabase.m */,
+				E37235A51AEDFEE5002C8FD8 /* FMDatabaseAdditions.h */,
+				E37235A61AEDFEE5002C8FD8 /* FMDatabaseAdditions.m */,
+				E37235A71AEDFEE5002C8FD8 /* FMDatabasePool.h */,
+				E37235A81AEDFEE5002C8FD8 /* FMDatabasePool.m */,
+				E37235A91AEDFEE5002C8FD8 /* FMDatabaseQueue.h */,
+				E37235AA1AEDFEE5002C8FD8 /* FMDatabaseQueue.m */,
+				E37235AB1AEDFEE5002C8FD8 /* FMDB.h */,
+				E37235AC1AEDFEE5002C8FD8 /* FMResultSet.h */,
+				E37235AD1AEDFEE5002C8FD8 /* FMResultSet.m */,
+			);
+			name = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +258,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3DC274D1AF12C8200BAC325 /* Extension.swift in Sources */,
 				E34869C31ADFAA080021E668 /* ViewController.swift in Sources */,
+				E37235B01AEDFEE5002C8FD8 /* FMDatabasePool.m in Sources */,
 				E34869C61ADFAA080021E668 /* SqLT_Cafe.xcdatamodeld in Sources */,
+				E37235B11AEDFEE5002C8FD8 /* FMDatabaseQueue.m in Sources */,
 				E34869C11ADFAA080021E668 /* AppDelegate.swift in Sources */,
+				E37235AE1AEDFEE5002C8FD8 /* FMDatabase.m in Sources */,
+				E37235B21AEDFEE5002C8FD8 /* FMResultSet.m in Sources */,
+				E37235AF1AEDFEE5002C8FD8 /* FMDatabaseAdditions.m in Sources */,
+				E36C0F011B017A6F00DCAC77 /* ExecuteSQLViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +388,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "SqLT-Cafe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/SqLT-Cafe-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -345,7 +401,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "SqLT-Cafe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/SqLT-Cafe-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -404,6 +462,7 @@
 				E34869DC1ADFAA080021E668 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E34869DD1ADFAA080021E668 /* Build configuration list for PBXNativeTarget "SqLT-CafeTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +471,7 @@
 				E34869DF1ADFAA080021E668 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
